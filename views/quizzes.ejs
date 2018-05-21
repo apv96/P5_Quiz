@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Quizzes</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
-    <% for (var i in quizzes) {%>
-    <% var quiz = quizzes[i];%>
+    <h1>Quizzes</h1>
+    <p><a href= "/">index</a></p>
+    <p><a href= "/quizzes">quizzes</a></p>
+    <p><a href= "/credits">créditos</a></p>
+    <ul>
+    <% for (let i in quizzes) {%>
+    <% let quiz = quizzes[i];%>
     <li>
         <%= quiz.question%> : <%=quiz.answer%>
     </li>
     <% } %>
-  <a href="/credits">Credits</a>
+  </ul>
   </body>
 </html>

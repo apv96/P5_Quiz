@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var {models} = require ('../models/index');
+const Sequelize=require("sequelize");
+var {models} = require ('../models');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,6 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/credits',function (req,res,next) {
     res.render('credits',{title:'Credits'});
 });
+
 router.get('/quizzes',function (req,res,next) {
     models.quiz.findAll()
     .then(quizzes=>{
